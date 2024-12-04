@@ -4,6 +4,9 @@
   "description": "",
   "main": "dist/server.js",
   "type": "module",
+  "engines": {
+  "node": "20.x"
+  },
   "scripts": {
     "build": "tsc",
     "seed": "node dist/seeds/seed.js",

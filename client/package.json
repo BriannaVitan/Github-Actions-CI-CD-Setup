@@ -10,6 +10,9 @@
     "preview": "vite preview",
     "test": "vitest"
   },
+  "engines": {
+  "node": "20.x"
+  },
   "dependencies": {
     "bootstrap": "^5.2.3",
     "jwt-decode": "^4.0.0",
