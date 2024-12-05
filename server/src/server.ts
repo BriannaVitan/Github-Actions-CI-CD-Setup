@@ -9,7 +9,7 @@ const PORT = process.env.PORT || 3001;
 
 const __fileName = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__fileName)
-const buildPath = path.join(__dirname, "../../client/dist")
+const buildPath = path.join(__dirname, "../client/dist")
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
