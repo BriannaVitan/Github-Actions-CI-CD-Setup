@@ -25,7 +25,13 @@ export default defineConfig({
   server: {
     host: '0.0.0.0', // Use 0.0.0.0 to listen on all IPs in production
     port: 3001,
-    https: false, // Ensure it's set to false unless explicitly required
+    https: true, // Ensure it's set to false unless explicitly required
+    proxy: {
+      '/api': {
+        target: 'https://github-actions-ci-cd-setup-lzts.onrender.com',
+        secure: false,
+        changeOrigin: true }
+},
   },
   build: {
     outDir: 'dist',
