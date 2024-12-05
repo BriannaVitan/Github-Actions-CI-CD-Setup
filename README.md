@@ -15,11 +15,11 @@
   </a>
 
 <!--  Edit App name -->
-  <h3 align="center">Social Network API </h3>
+  <h3 align="center">Github Action CI/CD Setup</h3>
 
   <p align="center">
   <!--  Edit App description -->
-    This applican
+    This project demonstrates the implementation of a Continuous Integration (CI) and Continuous Deployment (CD) pipeline using GitHub Actions. The CI/CD is designed to automate testing with Cypress upon Pull Requests to the branchnew branch to main and then deploying the application directly to Render and MongoDB. This practice is used to ensure consistency, quality, and deployment of latest code once all checks have been met and merged to main.
 <!-- PROJECT LOGO -->
 <br />
     <a href="https://github.com/BriannaVitan/Github-Actions-CI-CD-Setup"><strong>Explore the docs »</strong></a>
@@ -52,11 +52,10 @@
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
+     <li><a href="#project-links">Project Links</a></li>
   </ol>
 </details>
 
@@ -70,8 +69,7 @@
 <!-- Add video demos using the following format: -->
 <!-- ![Video alt description](directPathOfVideos) -->
 
-This project was built using Insomnia or Postman, MongoDB, Node, Express, and Mongoose.
-
+This project was built using Cypress, Render, Github, and MongoDB.
 ### Built With
 
 <div align="center">
@@ -84,10 +82,8 @@ This project was built using Insomnia or Postman, MongoDB, Node, Express, and Mo
 [![Express](https://img.shields.io/badge/Framework-Express-80ff00?style=plastic&logo=Express&logoWidth=10)](https://expressjs.com/)
 [![npm](https://img.shields.io/badge/Tool-npm-00ff00?style=plastic&logo=npm&logoWidth=10)](https://www.npmjs.com/)
 [![VS Code](https://img.shields.io/badge/IDE-VSCode-0000ff?style=plastic&logo=VisualStudioCode&logoWidth=10)](https://code.visualstudio.com/docs)
-[![PostgreSQL](https://img.shields.io/badge/Database-PostgreSQL-8000ff?style=plastic&logo=PostgreSQL&logoWidth=10)](https://www.postgresql.org/docs/)
 [![TypeScript](https://img.shields.io/badge/Language-TypeScript-007ACC?style=plastic&logo=typescript&logoWidth=10)](https://www.typescriptlang.org/)
 [![Express](https://img.shields.io/badge/Framework-Express-80ff00?style=plastic&logo=express&logoWidth=10)](https://expressjs.com/)
-[![pg](https://img.shields.io/badge/Package-pg-0984e3?style=plastic&logo=postgresql&logoWidth=10)](https://www.npmjs.com/package/pg)
 [![Sequelize](https://img.shields.io/badge/Package-Sequelize-6c5ce7?style=plastic&logo=sequelize&logoWidth=10)](https://sequelize.org/)
 [![Nodemon](https://img.shields.io/badge/DevDependency-Nodemon-d63031?style=plastic&logo=nodemon&logoWidth=10)](https://www.npmjs.com/package/nodemon)
 
@@ -120,14 +116,19 @@ npm i
 ```
 npm run build
 ```
+4. Run the Seeds
 
-4. Launch the app in development environment
+```
+npm run seed
+```
+
+5. Launch the app in development environment
 
 ```
 npm run start
 ```
 
-5. Visit app:
+6. Visit app:
 
 [http://localhost:3001/](http://localhost:3001/)
 
@@ -135,6 +136,7 @@ npm run start
 
 See the [open issues](https://github.com/BriannaVitan/Github-Actions-CI-CD-Setup/issues) for a full list of proposed features (and known issues).
 
+![alt text](Assets/Github-Actions.png)
 
 <!-- CONTRIBUTING -->
 
@@ -162,12 +164,12 @@ This project is licensed under the MIT license.
 
 
 
-Project Links:
+## Project Links:
 
 [Github Repository](https://github.com/BriannaVitan/Github-Actions-CI-CD-Setup)
 
 <!-- add your deployment link here -->
 
-[Deployment]()
+[Deployment](https://github-actions-ci-cd-setup-lzts.onrender.com)
 
 
