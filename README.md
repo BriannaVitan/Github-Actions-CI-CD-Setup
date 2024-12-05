@@ -136,6 +136,7 @@ npm run start
 
 See the [open issues](https://github.com/BriannaVitan/Github-Actions-CI-CD-Setup/issues) for a full list of proposed features (and known issues).
 
+![alt text](Assets/Github-Actions.png)
 
 <!-- CONTRIBUTING -->
 
