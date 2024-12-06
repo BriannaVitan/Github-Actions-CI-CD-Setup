@@ -1,46 +1,29 @@
-# Name of workflow
-name: Test workflow
+name: Checking Tests
 
-# Trigger workflow on all pull requests
 on:
   pull_request:
     branches:
       - develop
-      - staging
 
-# Jobs to carry out
 jobs:
   test:
-    # Operating system to run job
+    name: Checking Tests
     runs-on: ubuntu-latest
 
-    # Steps in job
-    steps:
-      # Get code from repo
+     steps:
       - name: Checkout code
-        uses: actions/checkout@v1
+        uses: actions/checkout@v4
 
-      - name: Use Node.js 21.x
-        uses: actions/setup-node@v1
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
         with:
           node-version: 21.x
 
-      # Install dependencies
-      - name: 🧰 Install Deps
+      - name: Install dependencies
         run: npm install
-
-      # Run build
-      - name: Run Build
-        run: npm run build
-      
-      # Start server
-      - name: Start the server
-        env:
-          MONGODB_URI: mongodb+srv://dbUser:rootroot@googlebooks.7s2ke.mongodb.net/?retryWrites=true&w=majority&appName=GoogleBooks
-        run: |
-          npm run start &
-          npx wait-on http://localhost:3001 
-
-      # Run tests
-      - name: Run Tests
-        run: npm run test-component
+      - name: Cypress run
+        uses: cypress-io/github-action@v6
+        with:
+          build: npm run build
+          start: npm run start
+          component: true
