@@ -4,7 +4,8 @@ dotenv.config();
 import mongoose from 'mongoose';
 
 // mongoose.connect(process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/techquiz');
+console.log(process.env.MONGODB_URI)
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb+srv://briannavitan:tq1c05G9GNqdH0nM@githubaction.cwabw.mongodb.net/?retryWrites=true&w=majority&appName=GithubActionn');
+mongoose.connect(process.env.MONGODB_URI || '');
 
 export default mongoose.connection;

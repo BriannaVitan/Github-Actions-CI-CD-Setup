@@ -10,6 +10,7 @@ export const getRandomQuestions = async (_req: Request, res: Response) => {
       { $project: { __v: 0 } }]);
     res.status(200).json(questions);
   } catch (err: any) {
+    console.log(err);
     res.status(500).json({ error: err.message });
   }
 };
