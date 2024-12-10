@@ -6,7 +6,7 @@
 ![Stargazers](https://img.shields.io/github/stars/404pandas/project-2-setup-guide.svg?style=plastic&logo=appveyor)
 ![Issues](https://img.shields.io/github/issues/404pandas/project-2-setup-guide.svg?style=plastic&logo=appveyor)
 
-</div>
+</div> 
 
 
 <div align="center">
@@ -137,7 +137,7 @@ npm run start
 See the [open issues](https://github.com/BriannaVitan/Github-Actions-CI-CD-Setup/issues) for a full list of proposed features (and known issues).
 
 ![alt text](Assets/Github-Actions.png)
-
+![alt text](<Assets/Github Actions Questions.png>)
 <!-- CONTRIBUTING -->
 
 ## Contributing
@@ -145,7 +145,7 @@ See the [open issues](https://github.com/BriannaVitan/Github-Actions-CI-CD-Setup
 Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
 If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
-Don't forget to give the project a star! Thanks again!
+Don't forget to give the project a star! Thanks again!!
 
 
 <!-- LICENSE -->

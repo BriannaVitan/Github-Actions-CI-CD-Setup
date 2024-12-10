@@ -1,46 +1,30 @@
-# Name of workflow
-name: Test workflow
+name: Deploy To Render
 
-# Trigger workflow on all pull requests
 on:
+  push:
+    branches: [main]
   pull_request:
     branches:
-      - develop
-      - staging
+      - main
 
-# Jobs to carry out
 jobs:
-  test:
-    # Operating system to run job
+  ci:
+    name: Deploy To Render
     runs-on: ubuntu-latest
-
-    # Steps in job
     steps:
-      # Get code from repo
-      - name: Checkout code
-        uses: actions/checkout@v1
-
-      - name: Use Node.js 21.x
-        uses: actions/setup-node@v1
-        with:
-          node-version: 21.x
-
-      # Install dependencies
-      - name: 🧰 Install Deps
-        run: npm install
-
-      # Run build
-      - name: Run Build
-        run: npm run build
-      
-      # Start server
-      - name: Start the server
-        env:
-          MONGODB_URI: mongodb+srv://dbUser:rootroot@googlebooks.7s2ke.mongodb.net/?retryWrites=true&w=majority&appName=GoogleBooks
-        run: |
-          npm run start &
-          npx wait-on http://localhost:3001 
-
-      # Run tests
-      - name: Run Tests
+      - name: install checkoutcode
+        uses: actions/checkout@v4
+        run: npm ci
+      - name: Test
+        uses: cypress-io/github-action@v6
         run: npm run test-component
+
+      - name: Deploy
+        # Only run this step if the branch is main
+        if: github.ref == 'refs/heads/main'
+        env:
+          deploy_url: ${{ secrets.RENDER_DEPLOY_HOOK_URL }}
+        run: |
+          curl "$deploy_url"
+
+          
