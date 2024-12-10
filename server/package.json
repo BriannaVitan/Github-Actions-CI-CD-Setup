@@ -11,8 +11,13 @@
     "build": "tsc",
     "seed": "node dist/seeds/seed.js",
     "start": "node dist/server.js",
-    "watch": "nodemon dist/server.js",
+    "watch": "nodemon",
     "test": "vitest"
+  },
+  "nodemonConfig": {
+    "watch": ["src"],
+    "ext": "ts,json,js",
+    "exec": "npx tsc && node dist/server.js"
   },
   "keywords": [],
   "author": "",
