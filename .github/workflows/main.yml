@@ -1,30 +1,59 @@
-name: Deploy To Render
+# name: Deploy To Render
+
+# on:
+#   push:
+#     branches: [main]
+#   pull_request:
+#     branches:
+#     - main
+
+# jobs:
+#   ci:
+#     name: Deploy To Render
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: install checkoutcode
+#         uses: actions/checkout@v4
+#         run: npm ci
+#       - name: Test
+#         uses: cypress-io/github-action@v6
+#         run: npm run test-component
+
+#       - name: Deploy
+#         # Only run this step if the branch is main
+#         if: github.ref == 'refs/heads/main'
+#         env:
+#           deploy_url: ${{ secrets.RENDER_DEPLOY_HOOK_URL }}
+#         run: |
+#           curl "$deploy_url"
+
+name: Checking Tests
 
 on:
-  push:
-    branches: [main]
   pull_request:
     branches:
-      - main
+    - develop
 
 jobs:
-  ci:
-    name: Deploy To Render
+  test:
+    name: Checking Tests
     runs-on: ubuntu-latest
-    steps:
-      - name: install checkoutcode
+
+     steps:
+      - name: Checkout code
         uses: actions/checkout@v4
-        run: npm ci
-      - name: Test
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 21.x
+
+      - name: Install dependencies
+        run: npm install
+      - name: Cypress run
         uses: cypress-io/github-action@v6
-        run: npm run test-component
-
-      - name: Deploy
-        # Only run this step if the branch is main
-        if: github.ref == 'refs/heads/main'
-        env:
-          deploy_url: ${{ secrets.RENDER_DEPLOY_HOOK_URL }}
-        run: |
-          curl "$deploy_url"
-
+        with:
+          build: npm run build
+          start: npm run start
+          component: true
           
