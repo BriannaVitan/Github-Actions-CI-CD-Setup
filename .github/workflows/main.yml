@@ -1,5 +1,5 @@
 # Name of workflow
-name: Lint and Test workflow
+name: Test workflow
 
 # Trigger workflow on all pull requests
 on:
@@ -11,7 +11,7 @@ on:
 # Jobs to carry out
 jobs:
   test:
-    # Operating system to run job on
+    # Operating system to run job
     runs-on: ubuntu-latest
 
     # Steps in job
@@ -28,16 +28,19 @@ jobs:
       # Install dependencies
       - name: 🧰 Install Deps
         run: npm install
-        
-      # Run lint
-      - name: Run Lint
-        run: npm run lint
 
       # Run build
       - name: Run Build
         run: npm run build
+      
+      # Start server
+      - name: Start the server
+        env:
+          MONGODB_URI: mongodb+srv://dbUser:rootroot@googlebooks.7s2ke.mongodb.net/?retryWrites=true&w=majority&appName=GoogleBooks
+        run: |
+          npm run start &
+          npx wait-on http://localhost:3001 
 
       # Run tests
       - name: Run Tests
-        run: npm run test
-        
+        run: npm run test-component

@@ -24,7 +24,6 @@ describe('Quiz Component', () => {
     cy.mount(<Quiz />);
     cy.get('button').contains('Start Quiz').click();
 
-    // Answer questions
     cy.get('button').contains('1').click();
 
     // Verify the quiz completion
