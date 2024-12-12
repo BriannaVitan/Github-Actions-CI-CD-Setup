@@ -1,7 +1,7 @@
 {
   "name": "coding-quiz",
   "version": "1.0.0",
-  "description": "", 
+  "description": "",
   "scripts": {
     "start": "cd server && npm run start",
     "seed": "cd server && npm run seed",
