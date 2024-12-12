@@ -10,11 +10,5 @@ export default defineConfig({
       viteConfig,
     },
   },
-
-  e2e: {
-    baseUrl: 'http://localhost:3001',
-    setupNodeEvents(_on, _config) {
-      // implement node event listeners here
-    },
   },
-});
+);
