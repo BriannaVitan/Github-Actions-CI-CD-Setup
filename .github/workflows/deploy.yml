@@ -16,7 +16,7 @@ jobs:
         - name: Test
           run: |
             npm install
-            npm run test-component
+            npm run test
 
         - name: Deploy
           if: github.ref == 'refs/heads/main'
@@ -24,3 +24,4 @@ jobs:
             DEPLOY_URL: ${{ secrets.RENDER_DEPLOY_HOOK_URL }}
           run: |
             curl "$DEPLOY_URL"
+  
